@@ -1,0 +1,9 @@
+#server setting
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /demo
+
+
