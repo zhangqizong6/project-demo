@@ -72,7 +72,8 @@ public class DataSourceConfig {
         //监听
         List<Filter> filters = new ArrayList<>();
         filters.add(logFilter);
-        dataSource.setProxyFilters(filters);  //设置自定义Filter  //todo 这里要设置一个DruidConfig
+        dataSource.setProxyFilters(filters);  //设置自定义Filter  //这里要设置一个filter的配置类 不加入bean的话会读取报错
+
         return dataSource;
     }
 
@@ -81,6 +82,7 @@ public class DataSourceConfig {
      * 通过将 @Qualifier 注解与我们想要使用的特定 Spring bean 的名称一起进行装配
      */
     @Bean(name = "masterTransactionManager")
+    @Primary
     public DataSourceTransactionManager masterTransactionManager() {
         return new DataSourceTransactionManager(masterDataSource());
     }
@@ -91,6 +93,8 @@ public class DataSourceConfig {
      * @param masterDataSource
      * @return
      */
+    @Bean(name = "masterSqlSessionFactory")
+    @Primary
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource masterDataSource) throws Exception {
 
         MybatisSqlSessionFactoryBean factoryBean = new MybatisSqlSessionFactoryBean();
