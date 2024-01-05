@@ -22,7 +22,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -32,7 +31,7 @@ import java.util.*;
  */
 @Configuration
 @MapperScan(basePackages = "com.**.mapper.master", sqlSessionFactoryRef = "masterSqlSessionFactory")
-public class DataSourceConfig {
+public class MasterDataSourceConfig {
 
     static final String MAPPER_LOCATION = "classpath*:mybatis/mapper/master/*.xml";
 
@@ -104,7 +103,7 @@ public class DataSourceConfig {
         configuration.setJdbcTypeForNull(JdbcType.NULL);
         factoryBean.setConfiguration(configuration);
         //指定xml路径
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(DataSourceConfig.MAPPER_LOCATION));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MasterDataSourceConfig.MAPPER_LOCATION));
         factoryBean.setPlugins(new PaginationInterceptor(), new OptimisticLockerInterceptor());
 
         return factoryBean.getObject();
