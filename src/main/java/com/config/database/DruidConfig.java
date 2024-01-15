@@ -1,4 +1,4 @@
-package com.project.demo.config.database;
+package com.config.database;
 
 import com.alibaba.druid.filter.logging.Slf4jLogFilter;
 import org.springframework.context.annotation.Bean;

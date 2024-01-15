@@ -1,4 +1,4 @@
-package com.project.demo.config.database;
+package com.config.database;
 
 import com.alibaba.druid.filter.Filter;
 import com.alibaba.druid.filter.logging.LogFilter;
