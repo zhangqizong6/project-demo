@@ -1,6 +1,6 @@
 #server setting
 server:
-  port: 8080
+  port: 8083
   tomcat:
     uri-encoding: UTF-8
   servlet:
@@ -49,3 +49,11 @@ master:
     password: 12345678
 
 
+# 接口文档swagger 屏蔽选true 不屏蔽为false
+knife4j:
+  production: true
+
+doc:
+  title: 接口文档
+  description: 接口文档的描述
+  version: 1.0.1
