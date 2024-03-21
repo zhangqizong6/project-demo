@@ -109,5 +109,11 @@ public class MasterDataSourceConfig {
         return factoryBean.getObject();
     }
 
+    public static void main(String[] args) {
+        Integer a = 1,b =1;
+        int c = 1,d = 1;
+        System.out.println(a == 1);
+        System.out.println(c == d);
+    }
 
 }

@@ -3,3 +3,4 @@
 2. DruidConfig配置类，新增logFilter注入bean
 3. 多数据源配置，新建一个数据源，命名为other后，在com/project/demo/config/database和com/project/demo/config/database同级下创建一个新的数据源配置，源码和master一样，将master全局替换成other即可，同时也要在yml文件下新建一个other的数据源信息
 4. mybatis plus 代码反向生成器，config/mybatisplus目录下，用于连接库表结构生成对应的实体类和mapper类
+5. 增加token jwt校验工具类 目的是获取header token做校验
